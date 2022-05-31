@@ -27,10 +27,10 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Setup MATLAB on Runner
-        run: matlab-actions/setup-matlab@v0
+        run: matlab-actions/setup-matlab@v1
 
       # Runs a set of commands using the runners shell
       - name: Run MATLAB tests
-        run: matlab-actions/run-tests@v0
+        run: matlab-actions/run-tests@v1
           echo Add other actions to build,
           echo test, and deploy your project.
