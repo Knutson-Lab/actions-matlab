@@ -32,27 +32,14 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run MATLAB tests
         uses: matlab-actions/run-tests@v1
+        with:
+          source-folder: src
+          code-coverage-cobertura: coverage.xml
         
         # with:
           # test-results-junit: test-results/results.xml
           # code-coverage-cobertura: code-coverage/coverage.xml
           
-      - name: Code Coverage Summary Report
-        uses: irongut/CodeCoverageSummary@v1.2.0
+      - uses: codecov/codecov-action@v1
         with:
-          filename: coverage.cobertura.xml
-          badge: true
-          fail_below_min: true
-          format: markdown
-          hide_branch_rate: false
-          hide_complexity: true
-          indicators: true
-          output: both
-          thresholds: '60 80'
-
-      - name: Add Coverage PR Comment
-        uses: marocchino/sticky-pull-request-comment@v2
-        if: github.event_name == 'pull_request'
-        with:
-          recreate: true
-          path: code-coverage-results.md
+          file: coverage.xml
