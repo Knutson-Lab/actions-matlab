@@ -1,5 +1,5 @@
 function tests = hellotest
-    addpath('parent_directory');
+    addpath('./src/');
     tests = functiontests(localfunctions);
 end
 
