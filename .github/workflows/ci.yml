@@ -37,9 +37,6 @@ jobs:
           # test-results-junit: test-results/results.xml
           # code-coverage-cobertura: code-coverage/coverage.xml
           
-      - name: Copy Coverage To Predictable Location
-        run: cp coverage/**/coverage.cobertura.xml coverage.cobertura.xml
-
       - name: Code Coverage Summary Report
         uses: irongut/CodeCoverageSummary@v1.2.0
         with:
