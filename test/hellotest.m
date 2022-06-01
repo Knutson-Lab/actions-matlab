@@ -3,7 +3,6 @@ function tests = hellotest
 end
 
 function test_01(testCase)
-    s = printhello();
-    
+    s = printhello;
     testCase.assertEqual(s, 'hello');
 end
