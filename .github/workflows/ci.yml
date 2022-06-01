@@ -35,9 +35,9 @@ jobs:
         with:
           source-folder: src
           code-coverage-cobertura: coverage.xml
+          test-results-junit: test-results/results.xml
         
         # with:
-          # test-results-junit: test-results/results.xml
           # code-coverage-cobertura: code-coverage/coverage.xml
           
       - uses: codecov/codecov-action@v1
