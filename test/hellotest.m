@@ -1,4 +1,5 @@
 function tests = hellotest
+    addpath('parent_directory');
     tests = functiontests(localfunctions);
 end
 
