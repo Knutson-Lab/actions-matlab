@@ -34,7 +34,7 @@ jobs:
         uses: matlab-actions/run-tests@v1
         with:
           source-folder: src
-          # code-coverage-cobertura: coverage.xml
+          code-coverage-cobertura: coverage.xml
           test-results-junit: test-results/results.xml
         
         # with:
