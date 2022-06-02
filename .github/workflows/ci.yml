@@ -34,15 +34,20 @@ jobs:
         uses: matlab-actions/run-tests@v1
         with:
           source-folder: src
-          code-coverage-cobertura: coverage.xml
+          # code-coverage-cobertura: coverage.xml
           test-results-junit: test-results/results.xml
         
         # with:
           # code-coverage-cobertura: code-coverage/coverage.xml
           
-      - uses: codecov/codecov-action@v1
+      # - uses: codecov/codecov-action@v1
+        # with:
+          # file: coverage.xml
+
+      - name: Code Coverage Summary Report
+        uses: irongut/CodeCoverageSummary@v1.2.0
         with:
-          file: coverage.xml
+          filename: coverage.cobertura.xml
           badge: true
           fail_below_min: true
           format: markdown
