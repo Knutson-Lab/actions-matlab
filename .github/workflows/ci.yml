@@ -36,6 +36,6 @@ jobs:
           source-folder: src
           
       - name: Code Coverage Summary
-        uses: irongut/CodeCoverageSummary@v1.2.0
+        uses: matlab-actions/irongut/CodeCoverageSummary@v1.2.0
         
  
