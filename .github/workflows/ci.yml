@@ -36,6 +36,13 @@ jobs:
           source-folder: src
           test-results-junit: test-results/results.xml
           code-coverage-cobertura: code-coverage/coverage.xml
+          
+      - name: Upload results artifact
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: test-restuls
+          path: test-results/results.xml
         
         # with:
           # test-results-junit: test-results/results.xml
