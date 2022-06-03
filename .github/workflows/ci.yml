@@ -34,7 +34,8 @@ jobs:
         uses: matlab-actions/run-tests@v1
         with:
           source-folder: src
-          code-coverage-cobertura: coverage.xml
+          test-results-junit: test-results/results.xml
+          code-coverage-cobertura: coverage.xml          
         
         # with:
           # test-results-junit: test-results/results.xml
@@ -43,3 +44,15 @@ jobs:
       - uses: codecov/codecov-action@v1
         with:
           file: coverage.xml
+          
+      - name: Upload results artifact
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          # name: test-restults
+          # path: test-results/results.xml
+
+          name: code-coverage
+          path: coverage.xml
+        
+ 
